@@ -1,0 +1,14 @@
+{
+  "welcome": "Mukangane General Trading is dedicated to sustainable farming, community development, and producing high-quality agricultural products in Limpopo.",
+  "services": [
+    "Fresh Produce",
+    "Poultry",
+    "Livestock",
+    "Farming Equipment"
+  ],
+  "team": [
+    {"role": "CEO", "name": "Mr. Mukangane", "image": "CEO.jpg"},
+    {"role": "Manager", "name": "Mrs. Ndlovu", "image": "manager.avif"},
+    {"role": "Best Employee", "name": "Mr. Phathu", "image": "best_employee.jpg"}
+  ]
+}

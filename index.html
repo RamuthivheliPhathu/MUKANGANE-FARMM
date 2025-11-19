@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="About Mukangane General Trading: Sustainable farming, community empowerment, high-quality produce and livestock.">
+    <meta name="keywords" content="Mukangane General Trading, Tshiozwi, Makhado, sustainable farming, livestock, poultry, produce, team">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MUKANGANE GENERAL TRADING</title>
+    
+    <!-- Styles -->
+    <style>
+        body {font-family: Arial, sans-serif; margin:0; line-height:1.6; color:#333;}
+        header {background:#2c3e50; color:#fff; padding:15px; text-align:center;}
+        nav a {color:#fff; text-decoration:none; margin:0 10px;}
+        nav a:hover {text-decoration:underline;}
+        main {padding:20px;}
+        footer {text-align:center; padding:10px; background:#f4f4f4; margin-top:20px;}
+
+        /* Team section */
+        #team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .team-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+        }
+        .team-card img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        @media(max-width:768px){
+            nav a{display:block;margin:5px 0;}
+            .team-card{width:100%; margin-bottom:20px;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MUKANGANE GENERAL TRADING</h1>
+        <nav>
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="about.html" class="nav-btn">About Us</a>
+            <a href="services.html" class="nav-btn">Services</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About Our Farm</h2>
+        <p>Located in <strong>Tshiozwi Village, Makhado</strong>, Mukangane Farm is committed to sustainable farming and community empowerment.</p>
+        <p>We supply both commercial markets and local communities with high-quality produce, poultry, and livestock. Our core values: honesty, hard work, and respect for the land.</p>
+
+        <h2>Our Team</h2>
+        <div id="team-container"></div> <!-- JSON content will appear here -->
+    </main>
+
+    <footer>
+        <p>2025 MUKANGANE GENERAL TRADING | Tshiozwi, Makhado, Sinthumule, South Africa</p>
+    </footer>
+
+    <script>
+        // JSON DATA (inside JavaScript)
+        const teamData = [
+            {"title":"CEO", "name":"Mukangane Tshifhiwa", "image":"CEO.jpg"},
+            {"title":"Manager", "name":"Rendani Netshandama", "image":"MANAGER.avif"},
+            {"title":"Best Employee", "name":"Lufuno Mugeri", "image":"best employee.jpg"}
+        ];
+
+        // Render team cards
+        const container = document.getElementById("team-container");
+        teamData.forEach(member => {
+            const card = document.createElement("div");
+            card.classList.add("team-card");
+            card.innerHTML = `
+                <img src="images/${member.image}" alt="${member.title}">
+                <h3>${member.title}</h3>
+                <p><strong>${member.name}</strong></p>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

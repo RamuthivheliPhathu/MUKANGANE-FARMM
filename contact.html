@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contact Mukangane General Trading for enquiries, feedback, or more information about our farm and products.">
+    <meta name="keywords" content="Mukangane General Trading, contact, farm, Tshiozwi, Makhado, enquiries, email, phone">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MUKANGANE GENERAL TRADING</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {font-family: Arial, sans-serif; margin:0; line-height:1.6; color:#333;}
+        header {background:#2c3e50; color:#fff; padding:15px; text-align:center;}
+        nav a {color:#fff; text-decoration:none; margin:0 10px;}
+        nav a:hover {text-decoration:underline;}
+        main {padding:20px; max-width:600px; margin:auto;}
+        footer {text-align:center; padding:10px; background:#f4f4f4; margin-top:20px;}
+
+        form {display:flex; flex-direction:column; gap:10px;}
+        input, textarea, select, button {
+            padding:8px;
+            font-size:16px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+        button {
+            background:#2c3e50;
+            color:#fff;
+            cursor:pointer;
+            transition: background 0.3s;
+        }
+        button:hover {background:#34495e;}
+        #formFeedback {margin-top:10px; font-weight:bold;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MUKANGANE GENERAL TRADING</h1>
+        <nav>
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="about.html" class="nav-btn">About Us</a>
+            <a href="services.html" class="nav-btn">Services</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <p>Reach out to us via email, phone, or by filling the contact form below:</p>
+        <ul>
+            <li>Email: <a href="mailto:info@mukanganefarm.co.za">info@mukanganefarm.co.za</a></li>
+            <li>Phone: +27 123 456 789</li>
+            <li>Location: Tshiozwi Village, Makhado, Sinthumule, South Africa</li>
+        </ul>
+
+        <!-- Contact Form -->
+        <form id="contactForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required minlength="3" placeholder="Enter your full name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required placeholder="Enter subject">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required rows="5" placeholder="Enter your message"></textarea>
+
+            <button type="submit">Send Message</button>
+            <p id="formFeedback"></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>2025 MUKANGANE GENERAL TRADING | Tshiozwi, Makhado, Sinthumule, South Africa</p>
+    </footer>
+
+    <!-- JavaScript Validation -->
+    <script>
+        const form = document.getElementById('contactForm');
+        const feedback = document.getElementById('formFeedback');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault(); // Prevent actual form submission
+
+            // Simple client-side validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if(name.length < 3){
+                feedback.textContent = "Name must be at least 3 characters.";
+                feedback.style.color = "red";
+                return;
+            }
+
+            if(!email.includes("@") || !email.includes(".")){
+                feedback.textContent = "Please enter a valid email address.";
+                feedback.style.color = "red";
+                return;
+            }
+
+            if(subject.length < 3){
+                feedback.textContent = "Subject must be at least 3 characters.";
+                feedback.style.color = "red";
+                return;
+            }
+
+            if(message.length < 10){
+                feedback.textContent = "Message must be at least 10 characters.";
+                feedback.style.color = "red";
+                return;
+            }
+
+            // If validation passes
+            feedback.textContent = "Thank you! Your message has been sent.";
+            feedback.style.color = "green";
+
+            // Optional: Reset the form
+            form.reset();
+        });
+    </script>
+</body>
+</html>

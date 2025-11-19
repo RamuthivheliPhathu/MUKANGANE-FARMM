@@ -1,0 +1,137 @@
+/* ======================
+   CSS RESET
+====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======================
+   BASE STYLES
+====================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2e2e2e;
+    background-color: #f3f7f1; /* light greenish background */
+}
+
+/* ======================
+   HEADER & NAVIGATION
+====================== */
+header {
+    background-color: #4caf50; /* farm green */
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.nav-btn {
+    display: inline-block;
+    background-color: #81c784; /* lighter green */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #66bb6a;
+    transform: translateY(-2px);
+}
+
+/* ======================
+   MAIN CONTENT
+====================== */
+main {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    color: #2e7d32; /* dark green for headings */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+main p, main li {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+main a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+/* ======================
+   FOOTER
+====================== */
+footer {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.95em;
+}
+
+/* ======================
+   RESPONSIVE DESIGN
+====================== */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-btn {
+        width: 80%;
+        margin-bottom: 12px;
+    }
+
+    main {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main h2 {
+        font-size: 1.6em;
+    }
+}
+
